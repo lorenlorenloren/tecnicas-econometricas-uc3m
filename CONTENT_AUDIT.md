@@ -16,6 +16,15 @@ Fecha de consulta: 15 de octubre de 2026. Fuentes: HTML de https://economia.uc3m
 
 Se mantienen los 17 bloques del inventario: noticias y avisos; organización; proyecto; herramientas y fuentes; datos de ejemplo; recursos complementarios; introducción; entrega 0; series y ARMA; inferencia; predicción; autocorrelación; modelos dinámicos; raíces unitarias; cointegración; bibliografía y 26 soluciones históricas de exámenes. Los avisos de evaluación, asistencia, requisitos, fechas y controles se encuentran en la transcripción original. Los marcadores xxx se conservan literalmente.
 
+## Verificación HTTP (HEAD, 149 destinos únicos)
+
+- **135** respondieron 200.
+- **7** respondieron 403 (el servidor bloqueó la comprobación automática): IMF Data, EViews (3 URLs), Coursera, BrainyQuote y Macrotrends.
+- **5** respondieron 404: ShillerYearlyData.wf1, SpuriousRegressionGranger.prg, simulation.prg, ExamJanuary2018Solutions.pdf y el curso antiguo de edX. Se conservan todos los destinos originales.
+- **2** no pudieron verificarse: math.uah.edu agotó el tiempo de espera y Eurostat falló por certificado TLS del comprobador.
+
+El detalle por URL está en link-check.csv. Un 403 o un error TLS/timeout no demuestra que el recurso esté caído; los 404 son respuestas observadas y podrían corresponder a recursos retirados.
+
 ## Duplicados e incidencias
 
 - Hay 3 URLs repetidas (6 apariciones), conservadas con IDs y posiciones distintas.
