@@ -1,0 +1,10 @@
+{
+  "name": "tecnicas-econometricas-uc3m",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portal estático de consulta para Técnicas Econométricas UC3M 2026-2027",
+  "scripts": {
+    "audit": "node scripts/audit.mjs",
+    "build": "node scripts/build.mjs"
+  }
+}

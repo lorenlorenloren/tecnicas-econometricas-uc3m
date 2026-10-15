@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="Portal de consulta para Técnicas Econométricas 2026-2027, UC3M.">
+  <title>Técnicas Econométricas · UC3M 2026–2027</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Técnicas Econométricas, inicio">
+      <span class="brand-mark">T</span><span>UC3M <span class="brand-muted">/ Economía</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#inicio" data-section="inicio" class="active">Inicio</a>
+      <a href="#temario" data-section="temario">Temario</a>
+      <a href="#practicas" data-section="practicas">Prácticas</a>
+      <a href="#examenes" data-section="examenes">Exámenes</a>
+      <a href="#proyecto" data-section="proyecto">Proyecto</a>
+      <a href="#herramientas" data-section="herramientas">Herramientas</a>
+      <a href="#recursos" data-section="recursos">Todos los recursos</a>
+    </nav>
+    <a class="top-link" href="#recursos">Buscar recursos <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="contenido">
+    <section class="hero section-wrap" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> Curso 2026—2027 <span class="eyebrow-divider">·</span> LEC y DER-ECO</p>
+        <h1>Técnicas<br><span>Econométricas</span></h1>
+        <p class="hero-lead">Econometría de series temporales</p>
+        <p class="hero-description">Material docente, avisos y recursos del curso de Jesús Gonzalo en la Universidad Carlos III de Madrid.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#temario">Explorar el temario <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="#recursos">Ver los 152 recursos</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Datos clave del curso">
+        <div class="professor">
+          <span class="professor-avatar" aria-hidden="true">JG</span>
+          <div><span class="meta-label">Profesor</span><strong>Jesús Gonzalo</strong></div>
+        </div>
+        <div class="hero-card-rule"></div>
+        <div class="key-stat"><span>Evaluación</span><strong>40 + 40 + 20</strong><small>Dos controles y proyecto empírico</small></div>
+        <div class="key-stat"><span>Asistencia mínima</span><strong>80 %</strong><small>Magistral y grupo reducido</small></div>
+        <a class="card-link" href="#avisos">Avisos y requisitos <span aria-hidden="true">→</span></a>
+      </aside>
+      <div class="hero-stamp" aria-hidden="true">SERIES<br>DE TIEMPO</div>
+    </section>
+
+    <section class="notice section-wrap" id="avisos" aria-labelledby="notice-heading">
+      <div class="notice-icon" aria-hidden="true">!</div>
+      <div><p class="eyebrow">Información importante</p><h2 id="notice-heading">Asistencia, controles y proyecto</h2>
+        <p>La evaluación se compone de dos parciales (40 % + 40 %) y el proyecto empírico (20 %). Se requiere un mínimo del 80 % de asistencia a las clases del grupo magistral y reducido para entregar el proyecto y presentarse a los dos controles. Consulta los avisos originales para conocer las instrucciones completas.</p></div>
+      <a href="#contenido-original" class="notice-link">Leer avisos completos <span aria-hidden="true">→</span></a>
+    </section>
+
+    <section class="section-wrap overview" aria-label="Inventario del curso">
+      <div class="section-heading"><div><p class="eyebrow">Un curso, todos sus materiales</p><h2>Encuentra lo que necesitas</h2></div>
+        <a class="text-link" href="#recursos">Abrir catálogo completo <span aria-hidden="true">→</span></a></div>
+      <div class="stats-grid" id="stats"></div>
+    </section>
+
+    <section class="section-wrap home-groups">
+      <div class="section-heading"><div><p class="eyebrow">Accesos rápidos</p><h2>Material por bloque</h2></div><p class="section-note">Cada enlace abre el recurso en su ubicación original.</p></div>
+      <div class="group-grid" id="group-cards"></div>
+    </section>
+
+    <div id="course-sections"></div>
+
+    <section class="catalog-section" id="recursos">
+      <div class="section-wrap">
+        <div class="section-heading catalog-heading"><div><p class="eyebrow">Índice íntegro · 152 apariciones</p><h2>Todos los recursos</h2><p class="section-note">Busca por título, tema, archivo o descripción. Los resultados conservan cada aparición del HTML original.</p></div></div>
+        <form class="filters" id="filter-form" role="search" onsubmit="return false">
+          <label class="search-box"><span class="sr-only">Buscar recursos</span><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Buscar un recurso, tema o archivo…" autocomplete="off"><kbd>/</kbd></label>
+          <label class="filter-control"><span class="sr-only">Filtrar por bloque</span><select id="category"><option value="">Todos los bloques</option></select></label>
+          <label class="filter-control"><span class="sr-only">Filtrar por formato</span><select id="format"><option value="">Todos los formatos</option></select></label>
+          <button class="clear-button" id="clear-filters" type="button">Limpiar</button>
+        </form>
+        <div class="result-line"><p id="result-count" aria-live="polite"></p><div class="selected-tags" id="active-filters"></div></div>
+        <div class="resource-list" id="resource-list"></div>
+        <div class="empty-state" id="empty-state" hidden><span aria-hidden="true">⌕</span><h3>No hay resultados</h3><p>Prueba con otras palabras o limpia los filtros para ver el catálogo completo.</p><button class="button button-secondary" id="empty-clear" type="button">Mostrar todos los recursos</button></div>
+      </div>
+    </section>
+
+    <section class="section-wrap original-section" id="contenido-original">
+      <details class="original-details">
+        <summary><span><span class="eyebrow">Archivo íntegro</span><strong>Contenido textual de la página original</strong></span><span class="summary-action">Consultar <span aria-hidden="true">＋</span></span></summary>
+        <p class="original-note">Transcripción del texto de la página docente consultada el 15 de octubre de 2026. Los enlaces que aparecían en el HTML están disponibles en el catálogo superior.</p>
+        <pre id="original-content">Cargando contenido original…</pre>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="section-wrap footer-inner">
+      <div><a class="brand footer-brand" href="#inicio"><span class="brand-mark">T</span><span>UC3M <span class="brand-muted">/ Economía</span></span></a><p>Interfaz no oficial de consulta. Los contenidos docentes pertenecen a sus respectivos autores. Los documentos enlazan a sus ubicaciones originales en la UC3M.</p></div>
+      <div class="footer-links"><a href="#recursos">Todos los recursos</a><a href="./enlaces.csv">Descargar enlaces.csv</a><a href="https://economia.uc3m.es/jgonzalo/teaching/TecnicasEconometricas.html" target="_blank" rel="noopener noreferrer">Página original <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </footer>
+</body>
+</html>

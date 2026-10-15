@@ -1,0 +1,12 @@
+import { readFileSync } from 'node:fs';
+import { strict as assert } from 'node:assert';
+const json=JSON.parse(readFileSync('src/data/resources.json','utf8'));
+const csv=readFileSync('enlaces.csv','utf8').replace(/^\uFEFF/,'').trim().split(/\r?\n/);
+assert.equal(json.length,152,'El inventario debe contener 152 apariciones del HTML original');
+assert.equal(csv.length-1,json.length,'CSV y JSON deben tener la misma cantidad de apariciones');
+assert.equal(new Set(json.map(x=>x.id)).size,json.length,'Los identificadores deben ser únicos');
+assert(json.every(x=>x.url.startsWith('https://')||x.url.startsWith('http://')),'Todos los destinos deben ser URLs absolutas');
+assert(json.every(x=>x.url===new URL(x.anchor,'https://economia.uc3m.es/jgonzalo/teaching/TecnicasEconometricas.html').href),'Alguna URL no coincide con la resolución de su href original');
+assert.equal(new Set(json.map(x=>x.url)).size,149,'Revisar destinos únicos');
+for(const file of ['site/index.html','site/app.js','site/styles.css','site/contenido-original.txt'])readFileSync(file);
+console.log('Auditoría local: 152/152 apariciones; 149 destinos únicos; URLs absolutas; transcripción presente.');
